@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "185457198303",
+    "project_id": "oudaounaoda",
+    "storage_bucket": "oudaounaoda.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185457198303:android:830e9b283fb21bdab0156a",
+        "android_client_info": {
+          "package_name": "com.example.plant_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT9xzjGE4kb6PQAZz-KY7QYOxM2nK6Zi8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
