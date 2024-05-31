@@ -2,7 +2,6 @@
 
 Api Plant Stor Mobile Application.
 
-![alt text](./assets/Intro.gif)
 
 PlantApp is a versatile project designed for see online coin price. This comprehensive guide will provide you with everything you need to know to get started with the project, from installation instructions to a detailed description of its features.
 
