@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:plant_app/const/constants.dart';
-import 'package:plant_app/screens/definiçoes.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:plant_app/const/constants.dart'; 
+import 'definiçoes.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -14,6 +14,23 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   final User? user = FirebaseAuth.instance.currentUser;
+  String? displayName;
+
+  @override
+  void initState() {
+    super.initState();
+    _fetchUserData();
+  }
+
+  Future<void> _fetchUserData() async {
+    if (user != null) {
+      DocumentSnapshot userDoc =
+          await FirebaseFirestore.instance.collection('users').doc(user!.uid).get();
+      setState(() {
+        displayName = userDoc['name'] ?? 'Nome do Usuário';
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +106,7 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  user?.displayName ?? 'Nome do Usuário',
+                  displayName ?? 'Nome do Usuário',
                   style: const TextStyle(
                     fontSize: 15,
                     fontFamily: 'YekanBakh',

@@ -27,7 +27,7 @@ android {
     namespace "com.example.plant_app"
     // compileSdkVersion flutter.compileSdkVersion
     compileSdkVersion 34
-    ndkVersion flutter.ndkVersion
+    ndkVersion "25.1.8937393"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -57,7 +57,7 @@ android {
     defaultConfig {
     applicationId "com.example.teste"
     minSdkVersion 21
-    targetSdkVersion flutter.targetSdkVersion
+    targetSdkVersion 33
     versionCode flutterVersionCode.toInteger()
     versionName flutterVersionName
     }

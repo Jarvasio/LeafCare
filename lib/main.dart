@@ -6,7 +6,12 @@ import 'package:plant_app/screens/registo.dart';
 
 
 main() async {
-  runApp(const MaterialApp(home: RegisterPage(),debugShowCheckedModeBanner: false,));
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MaterialApp(
+    home: LoginPage(),
+    debugShowCheckedModeBanner: false,
+    )
+  );
   await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
   );
