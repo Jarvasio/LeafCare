@@ -1,7 +1,8 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:plant_app/screens/login.dart';
 import 'package:plant_app/screens/splash_screen.dart';
+import '../autenticação auth/auth_service.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -11,6 +12,7 @@ class RegisterPage extends StatelessWidget {
     final TextEditingController nameController = TextEditingController();
     final TextEditingController emailController = TextEditingController();
     final TextEditingController passwordController = TextEditingController();
+    final AuthService authService = AuthService();
 
     return Scaffold(
       appBar: AppBar(
@@ -74,12 +76,11 @@ class RegisterPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () async {
                   try {
-                    // Registro do usuário com Firebase
-                    final UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
-                      email: emailController.text.trim(),
-                      password: passwordController.text.trim(),
+                    await authService.registerWithEmailPassword(
+                      nameController.text.trim(),
+                      emailController.text.trim(),
+                      passwordController.text.trim(),
                     );
-
                     // Registro bem-sucedido, navegue para a SplashScreen
                     Navigator.pushReplacement(
                       context,
@@ -112,7 +113,10 @@ class RegisterPage extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => const LoginPage()),
                   );
                 },
-                child: const Text('Já tem conta? Login'),
+                child: const Text(
+                  'Já tem conta? Login',
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ],
           ),
@@ -122,7 +126,9 @@ class RegisterPage extends StatelessWidget {
   }
 }
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
     home: const LoginPage(),

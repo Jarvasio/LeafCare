@@ -58,7 +58,7 @@ class Plant {
       imageURL: 'assets/images/plant-two.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'Filodendro é um género botânico pertencente à família das aráceas. Os frutos do filodendro dão pelo nome comum banana-ananás, são bagas que se desenvolvem a partir de uma espata.',
       isSelected: false,
     ),
     Plant(
@@ -73,7 +73,7 @@ class Plant {
       imageURL: 'assets/images/plant-three.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'A espécie Bellis perennis, também designada pelos nomes populares margarida da praia, contém muitas variedades híbridas, utilizadas em floricultura, com lígulas brancas, rosadas, vermelhas ou roxas, de forma simples ou dobrada.',
       isSelected: false,
     ),
     Plant(
@@ -103,7 +103,7 @@ class Plant {
       imageURL: 'assets/images/plant-four.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'Night-Blooming Jasmine é uma espécie de planta da família da batata Solanaceae. É nativo das Índias Ocidentais, mas naturalizado no Sul da Ásia.',
       isSelected: false,
     ),
     Plant(
@@ -118,14 +118,14 @@ class Plant {
       imageURL: 'assets/images/plant-five.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'O sábio é uma planta não muito alta e com folhas muito aromáticas. É bem conhecido por suas propriedades medicinais e por seu reconhecimento culinário, embora seja recomendável usá-lo sozinho.',
       isSelected: false,
     ),
     Plant(
       plantId: 6,
       price: 19,
       category: 'Jardim',
-      plantName: '  Plumbago',
+      plantName: 'Plumbago',
       size: 'Pequeno',
       rating: 4.2,
       humidity: 46,
@@ -133,7 +133,7 @@ class Plant {
       imageURL: 'assets/images/plant-six.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'Plumbago auriculata, também conhecido como "plumbago", é uma planta de jardim perene que produz flores azuis brilhantes.',
       isSelected: false,
     ),
     Plant(
@@ -148,7 +148,7 @@ class Plant {
       imageURL: 'assets/images/plant-seven.png',
       isFavorated: false,
       decription:
-          'این گیاه یکی از بهترین گیاهان است. در بیشتر مناطق جهان رشد می کند و می تواند حتی در سخت ترین شرایط آب و هوایی نیز زنده بماند.',
+          'A tritônia é uma planta rasteira e florífera híbrida desenvolvida para decorar jardins. Ela é apreciada principalmente em canteiros e vasos baixos. Em algumas regiões, como no Sul e no Sudeste do Brasil.',
       isSelected: false,
     ),
     Plant(

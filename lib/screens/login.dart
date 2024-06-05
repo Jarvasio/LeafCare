@@ -118,7 +118,10 @@ class _LoginPageState extends State<LoginPage> {
                     MaterialPageRoute(builder: (context) => const RegisterPage()),
                   );
                 },
-                child: const Text('Não tem uma conta? Registe-se'),
+                child: const Text(
+                  'Não tem uma conta? Registe-se',
+                  style: TextStyle(color: Colors.black),
+                ),
               ),
             ],
           ),

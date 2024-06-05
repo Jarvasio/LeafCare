@@ -2,11 +2,15 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:plant_app/firebase_options.dart';
 import 'package:plant_app/screens/login.dart';
-import 'package:plant_app/screens/registo.dart';
 
 
 main() async {
-  runApp(const MaterialApp(home: RegisterPage(),debugShowCheckedModeBanner: false,));
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(const MaterialApp(
+    home: LoginPage(),
+    debugShowCheckedModeBanner: false,
+    )
+  );
   await Firebase.initializeApp(
    options: DefaultFirebaseOptions.currentPlatform,
   );
