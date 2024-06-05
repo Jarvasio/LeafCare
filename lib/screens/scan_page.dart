@@ -8,7 +8,10 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+<<<<<<< HEAD
 import 'package:plant_app/screens/scan_doenca.dart';
+=======
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
 
 class ScanPage extends StatefulWidget {
   const ScanPage({super.key});
@@ -55,8 +58,15 @@ class _ScanPageState extends State<ScanPage> {
         final responseBody = await response.stream.bytesToString();
         final decodedResponse = jsonDecode(responseBody);
 
+<<<<<<< HEAD
         String scientificName = decodedResponse['results'][0]['species']['scientificName'] ?? 'Nome científico não encontrado';
 
+=======
+        // Supondo que o nome científico esteja no campo 'scientificName'
+        String scientificName = decodedResponse['results'][0]['species']['scientificName'] ?? 'Nome científico não encontrado';
+
+        // Buscar informações da planta no Firestore
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
         _fetchPlantInfo(scientificName);
       } else {
         _showErrorDialog('Erro ao digitalizar a imagem: ${response.statusCode}');
@@ -83,14 +93,22 @@ class _ScanPageState extends State<ScanPage> {
         });
         _showResultDialog(_plantInfo!);
       } else {
+<<<<<<< HEAD
         _showErrorDialog('Planta não encontrada na base de dados.', scientificName);
+=======
+        _showErrorDialog('Planta não encontrada na base de dados.');
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
       }
     } catch (error) {
       _showErrorDialog('Erro ao buscar informações da planta: $error');
     }
   }
 
+<<<<<<< HEAD
   void _showErrorDialog(String message, [String? scientificName]) {
+=======
+  void _showErrorDialog(String message) {
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
     AwesomeDialog(
       context: context,
       dialogType: DialogType.error,
@@ -100,6 +118,7 @@ class _ScanPageState extends State<ScanPage> {
       btnOkText: 'Entendi',
       btnOkColor: Colors.red,
       btnOkOnPress: () {},
+<<<<<<< HEAD
       btnCancelText: scientificName != null ? 'Adicionar Planta' : null,
       btnCancelOnPress: scientificName != null
           ? () {
@@ -108,6 +127,8 @@ class _ScanPageState extends State<ScanPage> {
               ));
             }
           : null,
+=======
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
     ).show();
   }
 
@@ -138,6 +159,7 @@ class _ScanPageState extends State<ScanPage> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -237,7 +259,44 @@ class _ScanPageState extends State<ScanPage> {
                   ],
                 ),
               ],
+=======
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Digitalização de Imagens'),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          if (_selectedImage != null)
+            Expanded(
+              child: Image.file(
+                _selectedImage!,
+                fit: BoxFit.cover,
+              ),
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
             ),
+          if (_isScanning)
+            const SpinKitWave(
+              color: Colors.blue,
+              size: 30,
+            )
+          else
+            ElevatedButton(
+              onPressed: _scanImage,
+              child: const Text('Digitalizar'),
+            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                onPressed: () => _pickImage(ImageSource.gallery),
+                child: const Text('Escolher da Galeria'),
+              ),
+              ElevatedButton(
+                onPressed: () => _pickImage(ImageSource.camera),
+                child: const Text('Usar a Câmera'),
+              ),
+            ],
           ),
         ),
       ),

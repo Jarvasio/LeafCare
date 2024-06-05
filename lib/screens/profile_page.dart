@@ -2,9 +2,13 @@ import 'dart:io';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 import 'package:image_picker/image_picker.dart';
 import 'package:plant_app/const/constants.dart';
 import 'package:plant_app/models/plant.dart'; 
+=======
+import 'package:plant_app/const/constants.dart'; 
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
 import 'definiçoes.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -17,8 +21,11 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   final User? user = FirebaseAuth.instance.currentUser;
   String? displayName;
+<<<<<<< HEAD
   File? _profileImage;
   final picker = ImagePicker();
+=======
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
 
   @override
   void initState() {
@@ -28,12 +35,18 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Future<void> _fetchUserData() async {
     if (user != null) {
+<<<<<<< HEAD
       DocumentSnapshot userDoc = await FirebaseFirestore.instance.collection('users').doc(user!.uid).get();
+=======
+      DocumentSnapshot userDoc =
+          await FirebaseFirestore.instance.collection('users').doc(user!.uid).get();
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
       setState(() {
         displayName = userDoc['name'] ?? 'Nome do Usuário';
       });
     }
   }
+<<<<<<< HEAD
 
   Future<void> _pickImage() async {
     final pickedFile = await picker.pickImage(source: ImageSource.gallery);
@@ -93,6 +106,8 @@ class _ProfilePageState extends State<ProfilePage> {
       ),
     );
   }
+=======
+>>>>>>> b7c3880cb9fe010dc482e06e0635b4d20330f185
 
   @override
   Widget build(BuildContext context) {
