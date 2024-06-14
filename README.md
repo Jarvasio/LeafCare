@@ -1,9 +1,6 @@
 # PlantApp ReadMe
 
-Api Plant Stor Mobile Application.
-
-
-PlantApp is a versatile project designed for see online coin price. This comprehensive guide will provide you with everything you need to know to get started with the project, from installation instructions to a detailed description of its features.
+Aplicação de reconhecimento de plantas.
 
 ## Table of Contents
 
@@ -27,11 +24,11 @@ PlantApp is a versatile project designed for see online coin price. This compreh
 
 ## Features
 
-List the key features and functionalities of your project:
+Features do projeto:
 
-- Feature 1: Online Coin Price
+- Feature 1: Conecção ao firebase
 
-- Feature 2: Coin Chart
+- Feature 2: Ligação a 2 API's
 
 ## Installation
 
